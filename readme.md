@@ -78,10 +78,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer create
 
-Alexander Gajdoš
-could you please finish the customer service implementation
 
-Certainly. Here is the rest of the code for the Customer service implementation:
+Customer service implementation:
 
 @Override
 public Customer createCustomer(Customer customer) {
@@ -105,12 +103,8 @@ It provides implementations for the service methods defined in the CustomerServi
 
 The getCustomers and getCustomer methods use the findAll and findById methods of the CustomerRepository to retrieve customer information from the database.
 
-That's it for the Customer service. The Order service and Inventory service can be implemented in a similar way.
-Alexander Gajdoš
-could you please add Order Service implementation
-2 / 2
 
-Certainly. Here is the code for the Order service implementation:
+Order service implementation:
 
 import org.springframework.stereotype.Service;
 
@@ -204,11 +198,8 @@ It provides implementations for the service methods defined in the OrderService 
 
 The getOrders and getOrder methods use the findAll and findById methods of the OrderRepository to retrieve order information from the database.
 
-Is there anything else I can help with?
-Alexander Gajdoš
-could you please provide Customer and Order classes
 
-Certainly. Here is the code for the Customer class:
+Customer class:
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -304,12 +295,9 @@ public class Order {
 }
 
 The Order class is similar to the Customer class. It has four fields: id, customerId, product, and quantity. The id field is annotated with the @Id and @GeneratedValue annotations to mark it as the primary key of the entity and to configure its generation strategy. The customerId field represents the ID of the customer that placed the order.
+ 
 
-Is there anything else I can help with?
-Alexander Gajdoš
-could you please provide Customer controller implementation
-
-Certainly. Here is the code for the Customer controller implementation:
+Customer controller implementation:
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.\*;
@@ -368,11 +356,8 @@ It defines the following methods to handle the REST requests:
 
 Each method invokes the corresponding method of the CustomerService to perform the operation and returns the result.
 
-Is there anything else I can help with?
-Alexander Gajdoš
-could you also provide Order Controller implementation
 
-Certainly. Here is the code for the Order controller implementation:
+Order controller implementation:
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.\*;
@@ -430,5 +415,3 @@ It defines the following methods to handle the REST requests:
     deleteOrder: handles the DELETE /orders/{id} request and deletes an order by ID
 
 Each method invokes the corresponding method of the OrderService to perform the operation and returns the result.
-
-Is there anything else I can help with?
