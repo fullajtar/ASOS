@@ -1,15 +1,41 @@
 package com.example.demo.service.customer;
 
 import com.example.demo.model.Customer;
+import com.example.demo.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface CustomerService {
+@Service
+public class CustomerService {
 
-    List<Customer> getCustomers();
-    Customer getCustomer(long id);
-    Customer createCustomer(Customer customer);
-    Customer updateCustomer(long id, Customer customer);
-    void deleteCustomer(long id);
+    private final CustomerRepository customerRepository;
+
+    @Autowired
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    public List<Customer> getCustomers() {
+        return customerRepository.findAll();
+    }
+
+    public Customer getCustomer(long id) {
+        return customerRepository.findById(id).orElse(null);
+    }
+
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public Customer updateCustomer(long id, Customer customer) {
+        customer.setId(id);
+        return customerRepository.save(customer);
+    }
+
+    public void deleteCustomer(long id) {
+        customerRepository.deleteById(id);
+    }
 }
-
