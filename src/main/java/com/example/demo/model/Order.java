@@ -1,7 +1,5 @@
 package com.example.demo.model;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Table

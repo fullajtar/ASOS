@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Customer;
 import com.example.demo.service.customer.CustomerService;
-import com.example.demo.service.customer.Customer_Service;
+//import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

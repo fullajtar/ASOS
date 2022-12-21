@@ -1,8 +1,6 @@
 package com.example.demo.service.order;
 
 import com.example.demo.model.Order;
-import com.example.demo.repository.OrderRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
